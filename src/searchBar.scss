@@ -1,0 +1,34 @@
+$theme: #578bd3;
+header {
+  margin-top: 40px;
+  span {
+    font-family: lust, serif;
+    font-size: 24px;
+    color: $theme;
+    margin-left: 150px;
+  }
+  form {
+    display: inline;
+  }
+  input {
+    margin-left: 25px;
+    height: 36px;
+    width: 1084px;
+    border-style: none;
+    border-bottom: 1px solid grey;
+    font-size: 18px;
+    font-family: lato;
+    color: grey;
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $theme;
+    }
+  }
+  button {
+    margin-left: 25px;
+    border-style: none;
+    color: $theme;
+    font-size: 16px;
+    font-family: lato;
+  }
+}

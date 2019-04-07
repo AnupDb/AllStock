@@ -1,24 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import Axios from "axios";
+import Results from "./Results";
+import "./searchBar.scss";
 
 const SearchBar = () => {
-  const clickHandle = () => {
+  const [images, setImages] = useState([]);
+  const [search, setSearch] = useState("");
+  const clickHandle = e => {
+    console.log(search.split(" ").join("+"));
     Axios.get(
       process.env.API_URL +
         "key=" +
         process.env.API_KEY +
-        "&q=yellow+flowers&image_type=photo"
+        `&q=${search.split(" ").join("+")}&image_type=photo&page=`
     )
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        console.log(res.data.hits);
+        setImages(res.data.hits);
+      })
       .catch(err => console.log(err));
   };
+
   return (
-    <div>
+    <header>
       <span>All Stock</span>
-      <input type="text" className="photoInput" />
+      <form
+        onSubmit={e => {
+          clickHandle();
+          e.preventDefault();
+        }}
+      >
+        <input
+          type="text"
+          className="photoInput"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+        />
+        <button onClick={clickHandle}>Search</button>
+      </form>
       <button>Home</button>
-      <button onClick={clickHandle}>Profile</button>
-    </div>
+      <button>Profile</button>
+      <Results images={images} />
+    </header>
   );
 };
 
