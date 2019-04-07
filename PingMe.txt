@@ -1,0 +1,20 @@
+[Ritik - 7th April '19]
+
+1. Add feature to Display a message when the API's don't return any result like "Sorry.. Use some other keywords"
+
+2. Specifically tell me what buttons to keep. Like in pintrest when you hover you get to see the buttons appear which say 
+   (i)  "Save"
+   (ii) Beside "Save" Button there is a dropdown list of already created albums by user
+   (iii)In bottom left (in some cover images) there is some link for original source of cover photo
+   (iv) In right bottom there is another button too.
+   So tell me which buttons you want to keep and where
+   Add those buttons in the AdobeXD link itself(which you shared on slack)
+   I'll code for those buttons(css).. we can add interactivity on them later on(can code for JS interactivity if you allow me to.)
+
+3. Please answer/Instruct me in this Text file only (by appending below) with your name and date (as i did).
+   Don't laugh . Will work in the structered way. 
+
+4. I have added the feature for like pintrest layout. its working fine when you resize the browser also(responsive). try it.
+   If you want anything else or some edit in this. Mention it below.
+
+5. Abhi i forgot to make branch. I worked on master only. kalse i'll make branch and work on it.
