@@ -18,3 +18,15 @@
    If you want anything else or some edit in this. Mention it below.
 
 5. Abhi i forgot to make branch. I worked on master only. kalse i'll make branch and work on it.
+
+Answer 
+
+1.Sorry no images with matching keyword. Try another
+
+2. (1)Plus icon for direct save. Only if user is logged in or ask user to log in.If already
+    logged in then show albums to add to and another + icon inside to make album
+    (ii)No need albums will be shown as instructed above
+    (iii)Original full size photo will be shown on clicking photo
+    (iv)No need
+
+Anup-11 April

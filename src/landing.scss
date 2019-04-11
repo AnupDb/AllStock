@@ -1,0 +1,140 @@
+$theme: #578bd3;
+.container {
+  display: flex;
+  font: lato;
+  width: 100%;
+  height: 100%;
+}
+.left {
+  background-color: #578bd3;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  color: white;
+}
+
+.horizontal {
+  background-color: white;
+  height: 26px;
+  width: 45.5%;
+  position: fixed;
+  float: left;
+  margin-left: 3.8%;
+  margin-top: 3%;
+}
+
+.vertical {
+  background-color: white;
+  height: 84%;
+  width: 26px;
+  position: fixed;
+  bottom: 0;
+  float: left;
+  margin-left: 7.4%;
+  margin-top: 4.1%;
+}
+
+.content {
+  clear: both;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  font-family: lato;
+  font-size: 21px;
+  p {
+    &:nth-child(2) {
+      position: relative;
+      right: 39px;
+      top: -4px;
+    }
+    &:nth-last-child(1) {
+      position: relative;
+      right: 7px;
+    }
+  }
+
+  .icon1 {
+    position: relative;
+    right: 25px;
+    font-family: museo-slab;
+    font-weight: 700px;
+    font-size: 30px;
+  }
+  .icon2 {
+    position: relative;
+    right: 22px;
+    top: 8px;
+  }
+  .icon3 {
+    position: relative;
+    right: 28px;
+    top: 8px;
+  }
+}
+.right {
+  width: 50%;
+  .button-holder {
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+  }
+  button {
+    width: 340px;
+    height: 40px;
+    &:nth-of-type(1) {
+      background-color: $theme;
+      border-style: none;
+      border-radius: 34px;
+      font-size: 18px;
+      color: white;
+    }
+    &:nth-of-type(2) {
+      color: $theme;
+      border: 1px solid;
+      border-radius: 34px;
+      font-size: 18px;
+    }
+  }
+}
+.login {
+  margin-top: 104px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  .login-text {
+    border-top: 1px solid BCBCBC;
+    display: inline;
+    flex-basis: 30%;
+  }
+  button {
+    border: 1px solid $theme;
+    border-radius: 10px;
+    width: 118px;
+    height: 37px;
+  }
+}
+.design {
+  .logo {
+    font-family: lust;
+    font-size: 28px;
+    color: $theme;
+    width: 67px;
+    margin-left: 25%;
+    margin-top: 170px;
+    margin-bottom: 8px;
+  }
+  .call {
+    font-family: lato;
+    margin-left: 25%;
+    font-size: 20px;
+    width: 170px;
+    color: $theme;
+    margin-top: 0px;
+  }
+}
