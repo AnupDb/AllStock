@@ -1,144 +1,266 @@
 $theme: #578bd3;
-.container {
+
+.container{
+  display:flex;
+  width:100%;
+  height:100%;
+  .left{
+    background-color: #578bd3;
+    width:50%;
+    display: flex;
+    flex-flow: column;
+    .left-top{
+      background-color: white;
+      height:26px;
+      width:80%;
+      margin:40px auto 20px auto;
+    }
+    .left-bot{
+      display: flex;
+      margin-bottom: 51px;
+      .vertical-bar{
+        height:460px;
+        background-color: white;
+        width:26px;
+        margin-left:15%;
+      }
+      .content{
+        margin:20% 10%;
+        color:white;
+        font-family: lato;
+        font-size: 18px;
+        table{
+          .col1{
+            width:80px;
+            .row1{
+              font-family: museo-slab;
+              font-weight: 700px;
+              font-size: 30px;
+            }
+          }
+
+          tr{
+            margin-top: 10px;
+            height:50px;
+          }
+          td{
+            border-bottom: 1px solid white;
+          }
+        }
+
+      }
+    }
+  }
+  .right{
+    width:50%;
+    display: flex;
+    flex-flow: column;
+    .right-top{
+      margin-top: 30px;
+      display:flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      height:26px;
+      input,button{
+        display:block;
+        margin-top: 10px;
+      }
+      input{
+        border-top: 1px solid BCBCBC;
+        font-size: 14px;
+        flex-basis: 30%;
+        height:90%;
+      }
+      button{
+        border: 1px solid $theme;
+        background-color:$theme;
+        color:white;
+        flex-basis: 118px;
+        border-radius: 10px;
+        height:100%;
+      }
+    }
+    .right-mid{
+      width:60%;
+      margin:150px auto 5% auto;
+      .logo{
+        width:20%;
+        font-family: lust;
+        font-size: 28px;
+        color: $theme;
+      }
+      .tagline{
+        width:50%;
+        font-family: lato;
+        font-size: 20px;
+        color: $theme;
+      }
+    }
+    .right-bot{
+      width:40%;
+      margin:0% auto;
+      display: flex;
+      flex-flow: column;
+      button{
+        width:100%;
+        display:block;
+        margin-top:30px;
+        height: 40px;
+        background-color: $theme;
+        border-radius: 34px;
+        border-style: none;
+        font-size: 16px;
+        color: white;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+/*
+.container{
   display: flex;
   width: 100%;
   height: 100vh;
-}
-.left {
-  background-color: #578bd3;
-  display: inline-block;
-  width: 50%;
-  height: 100%;
-  color: white;
-}
+  .left{
+    background-color: #578bd3;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    color: white;
+    .horizontal{
+      background-color: white;
+      height: 26px;
+      width: 45.5%;
+      position: fixed;
+      float: left;
+      margin-left: 3.8%;
+      margin-top: 3%;
+    }
+    .vertical{
+      background-color: white;
+      height: 84%;
+      width: 26px;
+      position: fixed;
+      bottom: 0;
+      float: left;
+      margin-left: 7.4%;
+      margin-top: 4.1%;
+    }
+    .content{
+      clear: both;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      height: 100%;
+      justify-content: center;
+      font-family: lato;
+      font-size: 21px;
+      p {
+        margin-left: 100px;
+        &:nth-child(2) {
+          position: relative;
+          right: 39px;
+          top: -4px;
+        }
+        &:nth-last-child(1) {
+          position: relative;
+          right: 7px;
+        }
+      }
 
-.horizontal {
-  background-color: white;
-  height: 26px;
-  width: 45.5%;
-  position: fixed;
-  float: left;
-  margin-left: 3.8%;
-  margin-top: 3%;
-}
-
-.vertical {
-  background-color: white;
-  height: 84%;
-  width: 26px;
-  position: fixed;
-  bottom: 0;
-  float: left;
-  margin-left: 7.4%;
-  margin-top: 4.1%;
-}
-
-.content {
-  clear: both;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  height: 100%;
-  justify-content: center;
-  font-family: lato;
-  font-size: 21px;
-  p {
-    margin-left: 100px;
-    &:nth-child(2) {
-      position: relative;
-      right: 39px;
-      top: -4px;
-    }
-    &:nth-last-child(1) {
-      position: relative;
-      right: 7px;
+      .icon1 {
+        position: relative;
+        right: 25px;
+        font-family: museo-slab;
+        font-weight: 700px;
+        font-size: 30px;
+      }
+      .icon2 {
+        position: relative;
+        right: 22px;
+        top: 8px;
+      }
+      .icon3 {
+        position: relative;
+        right: 28px;
+        top: 8px;
+      }
     }
   }
 
-  .icon1 {
-    position: relative;
-    right: 25px;
-    font-family: museo-slab;
-    font-weight: 700px;
-    font-size: 30px;
-  }
-  .icon2 {
-    position: relative;
-    right: 22px;
-    top: 8px;
-  }
-  .icon3 {
-    position: relative;
-    right: 28px;
-    top: 8px;
-  }
-}
-.right {
-  width: 50%;
-  .button-holder {
-    height: 130px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 80px;
-  }
-  button {
-    width: 340px;
-    height: 40px;
-    &:hover {
-      cursor: pointer;
+  .right{
+    width: 50%;
+    .login{
+      margin-top: 6%;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-evenly;
+      .login-text {
+        border-top: 1px solid BCBCBC;
+        display: inline;
+        flex-basis: 30%;
+        font-size: 14px;
+      }
+      button {
+        border: 1px solid $theme;
+        border-radius: 10px;
+        width: 118px;
+        height: 37px;
+      }
+
     }
-    &:nth-of-type(1) {
-      background-color: $theme;
-      border-style: none;
-      border-radius: 34px;
-      font-size: 18px;
-      color: white;
+    .design{
+      .logo {
+        font-family: lust;
+        font-size: 28px;
+        color: $theme;
+        width: 67px;
+        margin-left: 25%;
+        margin-top: 170px;
+        margin-bottom: 8px;
+      }
+      .call {
+        font-family: lato;
+        margin-left: 25%;
+        font-size: 20px;
+        width: 170px;
+        color: $theme;
+        margin-top: 0px;
+      }
     }
-    &:nth-of-type(2) {
-      color: $theme;
-      border: 1px solid;
-      border-radius: 34px;
-      font-size: 18px;
+    .button-holder{
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 80px;
     }
+    button {
+      width: 340px;
+      height: 40px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:nth-of-type(1) {
+        background-color: $theme;
+        border-style: none;
+        border-radius: 34px;
+        font-size: 18px;
+        color: white;
+      }
+      &:nth-of-type(2) {
+        color: $theme;
+        border: 1px solid;
+        border-radius: 34px;
+        font-size: 18px;
+      }
+    }
+
   }
 }
-.login {
-  margin-top: 49px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-evenly;
-  .login-text {
-    border-top: 1px solid BCBCBC;
-    display: inline;
-    flex-basis: 30%;
-    font-size: 14px;
-  }
-  button {
-    border: 1px solid $theme;
-    border-radius: 10px;
-    width: 118px;
-    height: 37px;
-  }
-}
-.design {
-  .logo {
-    font-family: lust;
-    font-size: 28px;
-    color: $theme;
-    width: 67px;
-    margin-left: 25%;
-    margin-top: 170px;
-    margin-bottom: 8px;
-  }
-  .call {
-    font-family: lato;
-    margin-left: 25%;
-    font-size: 20px;
-    width: 170px;
-    color: $theme;
-    margin-top: 0px;
-  }
-}
+*/

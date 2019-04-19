@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Results from "./Results";
+import search_icon from "./assets/search_icon.png";
 import "./searchBar.scss";
 
 const SearchBar = () => {
@@ -52,7 +53,8 @@ const SearchBar = () => {
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
-          <button onClick={clickHandle}>Search</button>
+
+          <button className="search_icon" onClick={clickHandle}><img src={search_icon}/></button>
         </form>
         <button>Home</button>
         <button>Profile</button>
