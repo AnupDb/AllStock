@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Results from "./Results";
 import "./searchBar.scss";
@@ -6,13 +6,16 @@ import "./searchBar.scss";
 const SearchBar = () => {
   const [images, setImages] = useState([]);
   const [search, setSearch] = useState("");
-  const clickHandle = e => {
+  const [page, setPage] = useState(1);
+
+  const clickHandle = () => {
     console.log(search.split(" ").join("+"));
     Axios.get(
       process.env.API_URL +
         "key=" +
         process.env.API_KEY +
-        `&q=${search.split(" ").join("+")}&image_type=photo&page=`
+        `&q=${search.split(" ").join("+")}&image_type=photo&page=${page}` +
+        "&per_page=50"
     )
       .then(res => {
         console.log(res);
@@ -22,27 +25,40 @@ const SearchBar = () => {
       .catch(err => console.log(err));
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop ===
+        document.documentElement.offsetHeight
+      ) {
+        setPage(page + 1);
+      }
+    });
+  });
+
   return (
-    <header>
-      <span>All Stock</span>
-      <form
-        onSubmit={e => {
-          clickHandle();
-          e.preventDefault();
-        }}
-      >
-        <input
-          type="text"
-          className="photoInput"
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <button onClick={clickHandle}>Search</button>
-      </form>
-      <button>Home</button>
-      <button>Profile</button>
+    <div>
+      <header>
+        <span>All Stock</span>
+        <form
+          onSubmit={e => {
+            clickHandle();
+            e.preventDefault();
+          }}
+        >
+          <input
+            type="text"
+            className="photoInput"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
+          <button onClick={clickHandle}>Search</button>
+        </form>
+        <button>Home</button>
+        <button>Profile</button>
+      </header>
       <Results images={images} />
-    </header>
+    </div>
   );
 };
 
