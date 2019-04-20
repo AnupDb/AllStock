@@ -111,19 +111,10 @@ const Landing = () => {
             </tr>
             </tbody>
           </table>
-
-                <tr>
-                  <td className="col1 row3">
-                    <img src={share} alt="share icon" />
-                  </td>
-                  <td className="col2 row3">Make and share your albums</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
-      <div className="right">
+    </div>
+    <div className="right">
         <div className="right-top">
           <input
             className="login-name"
@@ -176,8 +167,8 @@ const Landing = () => {
             <button className="BrowseGuest">Browse as guest</button>
           </Link>
         </div>
-      </div>
     </div>
+  </div>
   );
 };
 
