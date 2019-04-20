@@ -32,7 +32,7 @@ const SearchBar = () => {
     setPage(i);
   };
   useEffect(() => {
-    if (images) {
+    if (images != []) {
       clickHandle();
     }
   }, [page]);
