@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Results from "./Results";
+
 import search_icon from "./assets/search_icon.png";
 import "./searchBar.scss";
 
@@ -21,7 +22,7 @@ const SearchBar = () => {
         "&per_page=50"
     )
       .then(res => {
-        console.log(res);
+        console.log(search);
         console.log(res.data.hits);
         setImages(res.data.hits);
         setNumberPage(res.data.totalHits / 50);
@@ -32,9 +33,7 @@ const SearchBar = () => {
     setPage(i);
   };
   useEffect(() => {
-    if (images != []) {
-      clickHandle();
-    }
+    clickHandle();
   }, [page]);
   for (let i = 0; i < numberPage; i++) {
     pageHolder.push(
