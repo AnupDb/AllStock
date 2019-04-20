@@ -32,7 +32,9 @@ const SearchBar = () => {
     setPage(i);
   };
   useEffect(() => {
-    clickHandle();
+    if (images) {
+      clickHandle();
+    }
   }, [page]);
   for (let i = 0; i < numberPage; i++) {
     pageHolder.push(
