@@ -8,9 +8,11 @@ const SearchBar = () => {
   const [images, setImages] = useState([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-
+  const [numberPage, setNumberPage] = useState(0);
+  var pageHolder = [];
   const clickHandle = () => {
     console.log(search.split(" ").join("+"));
+    console.log(page);
     Axios.get(
       process.env.API_URL +
         "key=" +
@@ -22,20 +24,29 @@ const SearchBar = () => {
         console.log(res);
         console.log(res.data.hits);
         setImages(res.data.hits);
+        setNumberPage(res.data.totalHits / 50);
       })
       .catch(err => console.log(err));
   };
-
+  const changePage = i => {
+    setPage(i);
+  };
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (
-        window.innerHeight + document.documentElement.scrollTop ===
-        document.documentElement.offsetHeight
-      ) {
-        setPage(page + 1);
-      }
-    });
-  });
+    clickHandle();
+  }, [page]);
+  for (let i = 0; i < numberPage; i++) {
+    pageHolder.push(
+      <li key={i + 1}>
+        <button
+          onClick={() => {
+            changePage(i + 1);
+          }}
+        >
+          {i + 1}
+        </button>
+      </li>
+    );
+  }
 
   return (
     <div>
@@ -54,12 +65,15 @@ const SearchBar = () => {
             onChange={e => setSearch(e.target.value)}
           />
 
-          <button className="search_icon" onClick={clickHandle}><img src={search_icon}/></button>
+          <button className="search_icon" onClick={clickHandle}>
+            <img src={search_icon} alt="search" />
+          </button>
         </form>
         <button>Home</button>
         <button>Profile</button>
       </header>
       <Results images={images} />
+      <ul>{pageHolder}</ul>
     </div>
   );
 };
