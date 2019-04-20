@@ -94,21 +94,22 @@ const Landing = () => {
         <div className="vertical-bar"></div>
         <div className="content">
           <table>
+            <tbody>
             <tr>
-              <td className="col1 row1">HD</td>
-              <td className="col2 row1">Get high quality stock images</td>
+              <td className="col1row1 col1">HD</td>
+              <td className="col2row1">Get high quality stock images</td>
             </tr>
 
             <tr>
-              <td className="col1 row2"><img src={halfstar} alt="star icon" /></td>
-              <td className="col2 row2">Rate your own photos</td>
+              <td className="col1row2 col1"><img src={halfstar} alt="star icon" className="icon"/></td>
+              <td className="col2row2">Rate your own photos</td>
             </tr>
 
             <tr>
-              <td className="col1 row3"><img src={share} alt="share icon" /></td>
-              <td className="col2 row3">Make and share your albums</td>
+              <td className="col1row3 col1"><img src={share} alt="share icon" className="icon"/></td>
+              <td className="col2row3">Make and share your albums</td>
             </tr>
-
+            </tbody>
           </table>
 
         </div>
