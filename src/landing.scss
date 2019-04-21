@@ -1,5 +1,4 @@
-$theme: #578bd3;
-
+@import "variables";
 .container{
   display:flex;
   width:100%;
@@ -9,7 +8,7 @@ $theme: #578bd3;
   top:0;
   overflow: hidden;
   .left{
-    background-color: #578bd3;
+    background-color: $theme;
     width:50%;
     height:100%;
     overflow-y: hidden;

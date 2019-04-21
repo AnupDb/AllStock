@@ -6,3 +6,6 @@ html,body {
 #app {
   height: 100vh;
 }
+#modal{
+  position: relative;
+}

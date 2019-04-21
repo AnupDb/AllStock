@@ -35,6 +35,7 @@ const SearchBar = () => {
   useEffect(() => {
     clickHandle();
   }, [page]);
+
   for (let i = 0; i < numberPage; i++) {
     pageHolder.push(
       <li key={i + 1}>
@@ -74,7 +75,7 @@ const SearchBar = () => {
         <button>Profile</button>
       </header>
       <Results images={images} />
-      <ul>{pageHolder}</ul>
+      <ul className="pagination">{pageHolder}</ul>
     </div>
   );
 };
