@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import Results from "./Results";
-
+import { Link } from "../node_modules/@reach/router";
 import search_icon from "./assets/search_icon.png";
 import "./searchBar.scss";
 
@@ -72,7 +72,9 @@ const SearchBar = () => {
           </button>
         </form>
         <button>Home</button>
-        <button>Profile</button>
+        <Link to="/Profile">
+          <button>Profile</button>
+        </Link>
       </header>
       <Results images={images} />
       <ul className="pagination">{pageHolder}</ul>
